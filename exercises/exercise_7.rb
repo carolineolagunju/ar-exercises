@@ -9,11 +9,13 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+#Attempting to create employees leaving out some feeds to trigger error
 @store1.employees.create(last_name: "Santiago", hourly_rate: 50)
 @store1.employees.create(first_name: "Pamela", hourly_rate: 50)
 @store1.employees.create(last_name: "Santiago", first_name: "Pamela", hourly_rate: 202)
 Employee.create(last_name: "Santiago", first_name: "Pamela", hourly_rate: 200)
+
+#Attempting to create stores leaving out some feeds to trigger error
 Store.create(name: "Ba", annual_revenue: 300000, mens_apparel: true, womens_apparel: true)
 Store.create(name: "Super Store", annual_revenue: -1, mens_apparel: true, womens_apparel: true)
 Store.create(name: "Super Store", annual_revenue: 30, mens_apparel: false, womens_apparel: false)
@@ -23,3 +25,11 @@ store_name = gets.chomp
 
 store = Store.create(name: store_name)
 
+# if store.valid?
+#   puts "Store created successfully!"
+# else
+#   puts "Store creation failed!"
+  store.errors.full_messages.each do |msg|
+    puts msg
+  end
+# end
