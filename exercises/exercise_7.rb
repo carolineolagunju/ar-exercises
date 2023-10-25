@@ -25,11 +25,6 @@ store_name = gets.chomp
 
 store = Store.create(name: store_name)
 
-# if store.valid?
-#   puts "Store created successfully!"
-# else
-#   puts "Store creation failed!"
-  store.errors.full_messages.each do |msg|
-    puts msg
-  end
-# end
+store.errors.full_messages.each do |msg|
+  puts msg
+end

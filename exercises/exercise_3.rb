@@ -7,6 +7,6 @@ puts "----------"
 
 # Your code goes here ...
 @store3 = Store.find_by(id: 3)
-@store3.destroy
+@store3.destroy()
 
 puts "Current store count after deleting Gastown is #{Store.count}"

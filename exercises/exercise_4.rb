@@ -19,7 +19,7 @@ yaletown = Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: 
 
 # return the annual revenue of each store that only carries men's apparel
 @mens_stores.each do |store|
-  puts "#{store.name} Annual Revenue: #{store.annual_revenue}"
+  puts "Store name: #{store.name} \n Annual Revenue: #{store.annual_revenue}"
 end
 
 # Fetch stores that only carries women's apparel and are generating less than $1M in annual revenue
@@ -27,5 +27,5 @@ end
 
 # return the annual revenue of each store that only carries women's apparel and annual revenue is less than $1M
 @womens_stores.each do |store|
-  puts "#{store.name} Annual Revenue: #{store.annual_revenue}"
+  puts "Store name: #{store.name} \n Annual Revenue: #{store.annual_revenue}"
 end
